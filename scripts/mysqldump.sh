@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 for dir in mnt tmp; do 
   if [ ! -d "/$dir/$WSO2_BACKUP_DIR" ]; then
-   mkdir /tmp/$WSO2_BACKUP_DIR
+   mkdir /$dir/$WSO2_BACKUP_DIR
   fi
 done
 mysqldump -h "$WSO2_MYSQL_SERVICE_NAME" -P "$WSO2_MYSQL_PORT" -u "$WSO2_MYSQL_USER" -p"$WSO2_MYSQL_PASSWORD" $WSO2IS_DB > /tmp/"$WSO2_BACKUP_DIR"/wso2is-db-$(date +%Y%m%d-%H%M).sql
